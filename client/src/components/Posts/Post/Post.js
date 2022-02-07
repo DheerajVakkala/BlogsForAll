@@ -21,15 +21,15 @@ const Post = ({ post, setCurrentId }) => {
   const userId = user?.result.googleId || user?.result?._id;
   // const hasLikedPost = post.likes.find((like) => like === userId);
 
-  const handleLike = async () => {
-    dispatch(likePost(post._id));
+  // const handleLike = async () => {
+  //   dispatch(likePost(post._id));
 
-    // if (hasLikedPost) {
-    //   setLikes(post.likes.filter((id) => id !== userId));
-    // } else {
-    //   setLikes([...post.likes, userId]);
-    // }
-  };
+  //   if (hasLikedPost) {
+  //     setLikes(post.likes.filter((id) => id !== userId));
+  //   } else {
+  //     setLikes([...post.likes, userId]);
+  //   }
+  // };
 
   const Likes = () => {
     if (likes.length > 0) {
@@ -78,7 +78,7 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         )}
         <div className={classes.details}>
-          <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
+          <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `${tag} `)}</Typography>
         </div>
         <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
         <CardContent>
@@ -86,9 +86,9 @@ const Post = ({ post, setCurrentId }) => {
         </CardContent>
       </ButtonBase>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
+        {/* <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
           <Likes />
-        </Button>
+        </Button> */}
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
           <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
             <DeleteIcon fontSize="small" /> &nbsp; Delete
