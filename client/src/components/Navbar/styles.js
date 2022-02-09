@@ -54,6 +54,7 @@ export default makeStyles((theme) => ({
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
+    color: 'red'
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
