@@ -42,7 +42,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper} elevation={6}>
         <Typography variant="h6" align="center">
-          Please sign in to create your own blogs!
+          Please sign in to create your own blogs and to comment on others!
         </Typography>
       </Paper>
     );
